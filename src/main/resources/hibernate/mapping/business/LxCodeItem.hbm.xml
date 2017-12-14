@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxCodeItem" table="lx_code_item" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="codeKey" type="string">
+            <column name="code_key" length="10" />
+        </property>
+        <property name="codeNo" type="string">
+            <column name="code_no" length="30" />
+        </property>
+        <property name="codeName" type="string">
+            <column name="code_name" length="100" />
+        </property>
+        <property name="langType" type="string">
+            <column name="lang_type" length="10" />
+        </property>
+        <property name="order" type="int">
+            <column name="order" not-null="true">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;&#239;&#188;&#140;&#232;&#182;&#138;&#229;&#176;&#143;&#232;&#182;&#138;&#230;&#142;&#146;&#229;&#137;&#141;</comment>
+            </column>
+        </property>
+        <property name="isPublic" type="boolean">
+            <column name="is_public" not-null="true">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#230;&#156;&#137;&#230;&#149;&#136;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

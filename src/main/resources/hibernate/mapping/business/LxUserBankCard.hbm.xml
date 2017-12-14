@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxUserBankCard" table="lx_user_bank_card" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mid" type="int">
+            <column name="mid" not-null="true">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="20" not-null="true">
+                <comment>&#230;&#140;&#129;&#229;&#141;&#161;&#228;&#186;&#186;&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="cardNo" type="string">
+            <column name="card_no" length="30" not-null="true">
+                <comment>&#229;&#141;&#161;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="215" not-null="true">
+                <comment>&#231;&#156;&#129;</comment>
+            </column>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="215" not-null="true">
+                <comment>&#229;&#184;&#130;</comment>
+            </column>
+        </property>
+        <property name="bankName" type="string">
+            <column name="bank_name" length="125" not-null="true">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;</comment>
+            </column>
+        </property>
+        <property name="subBankName" type="string">
+            <column name="sub_bank_name" length="125" not-null="true">
+                <comment>&#230;&#148;&#175;&#232;&#161;&#140;</comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Byte">
+            <column name="is_active">
+                <comment>
+                &#230;&#152;&#175;&#229;&#144;&#166;&#230;&#156;&#137;&#230;&#149;&#136;0&#230;&#151;&#160;&#230;&#149;&#136;1&#230;&#156;&#137;&#230;&#149;&#136;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="creator" type="java.lang.Integer">
+            <column name="creator" />
+        </property>
+        <property name="modifier" type="java.lang.Integer">
+            <column name="modifier" />
+        </property>
+    </class>
+</hibernate-mapping>

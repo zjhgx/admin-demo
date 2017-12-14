@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxCouponTemplate" table="lx_coupon_template" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>
+                &#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#231;&#177;&#187;&#229;&#158;&#139;&#239;&#188;&#154;1-&#228;&#187;&#163;&#233;&#135;&#145;&#229;&#136;&#184;&#239;&#188;&#155;2-&#230;&#187;&#161;&#229;&#135;&#143;&#229;&#136;&#184;</comment>
+            </column>
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true">
+                <comment>
+                &#231;&#138;&#182;&#230;&#128;&#129;&#239;&#188;&#154;1-&#232;&#141;&#137;&#231;&#168;&#191;&#239;&#188;&#155;2-&#229;&#190;&#133;&#229;&#174;&#161;&#230;&#160;&#184;&#239;&#188;&#155;3-&#233;&#169;&#179;&#229;&#155;&#158;&#239;&#188;&#155;4-&#229;&#143;&#145;&#229;&#184;&#131;&#228;&#184;&#173;&#239;&#188;&#155;5-&#229;&#183;&#178;&#231;&#187;&#147;&#230;&#157;&#159;</comment>
+            </column>
+        </property>
+        <property name="discountAmount" type="big_decimal">
+            <column name="discount_amount" precision="20" scale="0" not-null="true">
+                <comment>&#228;&#188;&#152;&#230;&#131;&#160;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="needAmount" type="big_decimal">
+            <column name="need_amount" precision="20" scale="0">
+                <comment>&#230;&#182;&#136;&#232;&#180;&#185;&#232;&#166;&#129;&#230;&#177;&#130;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="publishNum" type="int">
+            <column name="publish_num" not-null="true">
+                <comment>&#229;&#143;&#145;&#232;&#161;&#140;&#230;&#149;&#176;&#233;&#135;&#143;</comment>
+            </column>
+        </property>
+        <property name="receivedNum" type="int">
+            <column name="received_num" not-null="true">
+                <comment>&#229;&#183;&#178;&#233;&#162;&#134;&#229;&#143;&#150;&#230;&#149;&#176;&#233;&#135;&#143;</comment>
+            </column>
+        </property>
+        <property name="usedNum" type="int">
+            <column name="used_num" not-null="true">
+                <comment>&#229;&#183;&#178;&#230;&#182;&#136;&#232;&#180;&#185;&#230;&#149;&#176;&#233;&#135;&#143;</comment>
+            </column>
+        </property>
+        <property name="scope" type="byte">
+            <column name="scope" not-null="true">
+                <comment>
+                &#233;&#128;&#130;&#231;&#148;&#168;&#232;&#140;&#131;&#229;&#155;&#180;&#239;&#188;&#154;1-&#229;&#133;&#168;&#229;&#156;&#186;&#233;&#128;&#130;&#231;&#148;&#168;&#239;&#188;&#155;2-&#233;&#131;&#168;&#229;&#136;&#134;&#229;&#149;&#134;&#229;&#147;&#129;&#229;&#143;&#175;&#231;&#148;&#168;</comment>
+            </column>
+        </property>
+        <property name="needWeek" type="string">
+            <column name="need_week" not-null="true">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#230;&#151;&#182;&#233;&#151;&#180;&#239;&#188;&#136;&#229;&#145;&#168;&#239;&#188;&#137;</comment>
+            </column>
+        </property>
+        <property name="needTimeStart" type="time">
+            <column name="need_time_start" length="8" not-null="true">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#229;&#188;&#128;&#229;&#167;&#139;&#230;&#151;&#182;&#230;&#174;&#181;</comment>
+            </column>
+        </property>
+        <property name="needTimeEnd" type="time">
+            <column name="need_time_end" length="8" not-null="true">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#231;&#187;&#147;&#230;&#157;&#159;&#230;&#151;&#182;&#230;&#174;&#181;</comment>
+            </column>
+        </property>
+        <property name="offTime" type="int">
+            <column name="off_time" not-null="true">
+                <comment>&#230;&#156;&#137;&#230;&#149;&#136;&#230;&#156;&#159;&#232;&#135;&#179;</comment>
+            </column>
+        </property>
+        <property name="isFree" type="boolean">
+            <column name="is_free" not-null="true">
+                <comment>
+                &#230;&#152;&#175;&#229;&#144;&#166;&#229;&#133;&#141;&#232;&#180;&#185;&#230;&#142;&#168;&#229;&#185;&#191;&#239;&#188;&#154;1-&#230;&#152;&#175;&#239;&#188;&#155;2-&#228;&#184;&#141;&#230;&#152;&#175;</comment>
+            </column>
+        </property>
+        <property name="useRule" type="string">
+            <column name="use_rule" length="65535" not-null="true">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#232;&#167;&#132;&#229;&#136;&#153;</comment>
+            </column>
+        </property>
+        <property name="createUserId" type="int">
+            <column name="create_user_id" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#228;&#186;&#186;&#229;&#145;&#152;</comment>
+            </column>
+        </property>
+        <property name="authUserId" type="java.lang.Integer">
+            <column name="auth_user_id">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#186;&#186;&#229;&#145;&#152;</comment>
+            </column>
+        </property>
+        <property name="authTime" type="java.lang.Integer">
+            <column name="auth_time">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="rejectReason" type="string">
+            <column name="reject_reason" length="1000">
+                <comment>&#233;&#169;&#179;&#229;&#155;&#158;&#229;&#142;&#159;&#229;&#155;&#160;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

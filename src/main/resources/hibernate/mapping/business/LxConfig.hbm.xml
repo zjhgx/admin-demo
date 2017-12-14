@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxConfig" table="lx_config" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>0-BD&#233;&#130;&#128;&#232;&#175;&#183;&#231;&#148;&#168;&#230;&#136;&#183;&#230;&#179;&#168;&#229;&#134;&#140;
+                1-BD&#233;&#130;&#128;&#232;&#175;&#183;&#231;&#148;&#168;&#230;&#136;&#183;&#230;&#138;&#149;&#232;&#181;&#132;
+                2-&#229;&#185;&#179;&#229;&#143;&#176;&#231;&#178;&#190;&#229;&#147;&#129;&#231;&#166;&#143;&#229;&#136;&#169;&#230;&#145;&#135;&#228;&#184;&#128;&#230;&#145;&#135;
+                3-&#229;&#149;&#134;&#230;&#136;&#183;&#231;&#178;&#190;&#229;&#147;&#129;&#231;&#166;&#143;&#229;&#136;&#169;&#230;&#145;&#135;&#228;&#184;&#128;&#230;&#145;&#135;
+                4-&#230;&#143;&#144;&#231;&#142;&#176;&#232;&#181;&#183;&#229;&#167;&#139;&#233;&#135;&#145;&#233;&#162;&#157;
+                5-&#229;&#185;&#179;&#229;&#143;&#176;&#233;&#162;&#132;&#229;&#173;&#152;&#230;&#138;&#165;&#232;&#173;&#166;&#233;&#135;&#145;&#233;&#162;&#157;
+                6-&#229;&#185;&#179;&#229;&#143;&#176;&#230;&#137;&#147;&#230;&#138;&#152;&#231;&#142;&#135;</comment>
+            </column>
+        </property>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#229;&#185;&#179;&#229;&#143;&#176;id</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>0-&#229;&#133;&#179;&#233;&#151;&#173; 1-&#229;&#188;&#128;&#229;&#144;&#175;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="256">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#229;&#134;&#133;&#229;&#174;&#185;: {bonusAmount:50}</comment>
+            </column>
+        </property>
+        <property name="mtime" type="int">
+            <column name="mtime" not-null="true">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

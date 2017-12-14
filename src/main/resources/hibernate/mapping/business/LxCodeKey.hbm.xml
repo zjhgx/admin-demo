@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxCodeKey" table="lx_code_key" catalog="lexiao">
+        <composite-id name="id" class="com.cs.lexiao.admin.mapping.business.LxCodeKeyId">
+            <key-property name="codeKey" type="string">
+                <column name="code_key" length="10" />
+            </key-property>
+            <key-property name="keyName" type="string">
+                <column name="key_name" length="100" />
+            </key-property>
+            <key-property name="langType" type="string">
+                <column name="lang_type" length="10" />
+            </key-property>
+            <key-property name="isNew" type="boolean">
+                <column name="is_new" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

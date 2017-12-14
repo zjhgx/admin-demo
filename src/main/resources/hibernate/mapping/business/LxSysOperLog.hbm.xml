@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxSysOperLog" table="lx_sys_oper_log" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="data" type="string">
+            <column name="data" length="1000">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#230;&#149;&#176;&#230;&#141;&#174;(json)</comment>
+            </column>
+        </property>
+        <property name="operName" type="string">
+            <column name="oper_name" length="50">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#229;&#145;&#152;&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="operId" type="java.lang.Integer">
+            <column name="oper_id">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#229;&#145;&#152;Id</comment>
+            </column>
+        </property>
+        <property name="operClient" type="java.lang.Byte">
+            <column name="oper_client">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#229;&#174;&#162;&#230;&#136;&#183;&#231;&#171;&#175;
+                1&#229;&#144;&#142;&#229;&#143;&#176;2&#229;&#137;&#141;&#231;&#171;&#175;</comment>
+            </column>
+        </property>
+        <property name="operType" type="java.lang.Byte">
+            <column name="oper_type">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#231;&#177;&#187;&#229;&#158;&#139;1&#229;&#133;&#133;&#229;&#128;&#188;2&#230;&#143;&#144;&#231;&#142;&#176;
+                3...</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="300">
+                <comment>&#229;&#164;&#135;&#230;&#179;&#168;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxWelfare" table="lx_welfare" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="coopPlat" type="java.lang.Integer">
+            <column name="coop_plat">
+                <comment>&#229;&#144;&#136;&#228;&#189;&#156;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Byte">
+            <column name="type">
+                <comment>&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#134;&#231;&#177;&#187;</comment>
+            </column>
+        </property>
+        <property name="belong" type="java.lang.Integer">
+            <column name="belong">
+                <comment>
+                &#231;&#166;&#143;&#229;&#136;&#169;&#229;&#189;&#146;&#229;&#177;&#158;(&#229;&#149;&#134;&#230;&#136;&#183;&#230;&#136;&#150;&#232;&#128;&#133;&#230;&#142;&#165;&#229;&#133;&#165;&#229;&#185;&#179;&#229;&#143;&#176;)</comment>
+            </column>
+        </property>
+        <property name="ticketType" type="string">
+            <column name="ticket_type" length="50">
+                <comment>&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#231;&#177;&#187;&#229;&#158;&#139;</comment>
+            </column>
+        </property>
+        <property name="ticketPrice" type="big_decimal">
+            <column name="ticket_price" precision="20" scale="0">
+                <comment>&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#228;&#187;&#183;&#229;&#128;&#188;</comment>
+            </column>
+        </property>
+        <property name="sellNum" type="java.lang.Integer">
+            <column name="sell_num">
+                <comment>&#229;&#143;&#145;&#232;&#161;&#140;&#230;&#149;&#176;&#233;&#135;&#143;</comment>
+            </column>
+        </property>
+        <property name="takedNum" type="java.lang.Integer">
+            <column name="taked_num">
+                <comment>&#229;&#183;&#178;&#233;&#162;&#134;&#230;&#149;&#176;&#233;&#135;&#143;</comment>
+            </column>
+        </property>
+        <property name="useTip" type="string">
+            <column name="use_tip" length="100">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#233;&#161;&#187;&#231;&#159;&#165;</comment>
+            </column>
+        </property>
+        <property name="sortNo" type="java.lang.Integer">
+            <column name="sort_no">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="isActive" type="java.lang.Byte">
+            <column name="is_active">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#230;&#191;&#128;&#230;&#180;&#187;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="csysid" type="java.lang.Integer">
+            <column name="csysid">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#232;&#128;&#133;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

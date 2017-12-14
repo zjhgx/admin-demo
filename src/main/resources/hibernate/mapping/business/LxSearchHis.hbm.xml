@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxSearchHis" table="lx_search_his" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="keys" type="string">
+            <column name="keys" length="100">
+                <comment>&#230;&#144;&#156;&#231;&#180;&#162;&#229;&#133;&#179;&#233;&#148;&#174;&#232;&#175;&#141;</comment>
+            </column>
+        </property>
+        <property name="nums" type="java.lang.Integer">
+            <column name="nums">
+                <comment>&#230;&#144;&#156;&#231;&#180;&#162;&#230;&#172;&#161;&#230;&#149;&#176;</comment>
+            </column>
+        </property>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

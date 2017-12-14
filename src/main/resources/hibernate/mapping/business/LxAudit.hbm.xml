@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxAudit" table="lx_audit" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="int">
+            <column name="uid" not-null="true">
+                <comment>uid</comment>
+            </column>
+        </property>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>0-BD&#229;&#133;&#165;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183; 1-BD&#231;&#166;&#187;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183;
+                2-&#229;&#149;&#134;&#230;&#136;&#183;&#229;&#133;&#165;&#233;&#169;&#187;&#231;&#148;&#179;&#232;&#175;&#183;
+                3-&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#229;&#174;&#161;&#230;&#160;&#184;</comment>
+            </column>
+        </property>
+        <property name="referenceId" type="int">
+            <column name="reference_id" not-null="true">
+                <comment>
+                bd&#232;&#161;&#168;id;&#229;&#149;&#134;&#230;&#136;&#183;&#232;&#161;&#168;id;&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#232;&#161;&#168;id</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>0-&#229;&#136;&#157;&#229;&#167;&#139; 1-&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#136;&#144;&#229;&#138;&#159;
+                2-&#233;&#169;&#179;&#229;&#155;&#158;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="256">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#231;&#148;&#179;&#232;&#175;&#183;&#229;&#142;&#159;&#229;&#155;&#160;</comment>
+            </column>
+        </property>
+        <property name="rejectReason" type="string">
+            <column name="reject_reason" length="256">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#233;&#169;&#179;&#229;&#155;&#158;&#229;&#142;&#159;&#229;&#155;&#160;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="int">
+            <column name="mtime" not-null="true">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

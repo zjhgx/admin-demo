@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxCity" table="lx_city" catalog="lexiao">
+        <id name="code" type="string">
+            <column name="code" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="provinceCode" type="string">
+            <column name="province_code" length="2" not-null="true">
+                <comment>&#231;&#156;&#129;&#231;&#188;&#150;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="32" not-null="true">
+                <comment>&#229;&#159;&#142;&#229;&#184;&#130;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="searchKey" type="string">
+            <column name="search_key" length="60">
+                <comment>&#230;&#139;&#188;&#233;&#159;&#179;&#230;&#144;&#156;&#231;&#180;&#162;</comment>
+            </column>
+        </property>
+        <property name="status" type="char">
+            <column name="status" length="1" not-null="true">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129;;0&#239;&#188;&#154;&#230;&#173;&#163;&#229;&#184;&#184;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

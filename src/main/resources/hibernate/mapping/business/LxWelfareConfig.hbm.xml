@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxWelfareConfig" table="lx_welfare_config" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="coopPlat" type="java.lang.Integer">
+            <column name="coop_plat">
+                <comment>&#229;&#144;&#136;&#228;&#189;&#156;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="ruleName" type="java.lang.Integer">
+            <column name="rule_name">
+                <comment>&#232;&#167;&#132;&#229;&#136;&#153;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="conType" type="java.lang.Integer">
+            <column name="con_type">
+                <comment>
+                &#231;&#166;&#143;&#229;&#136;&#169;&#231;&#177;&#187;&#229;&#158;&#139;(&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#149;&#176;&#230;&#141;&#174;&#229;&#173;&#151;&#229;&#133;&#184;)</comment>
+            </column>
+        </property>
+        <property name="dayFreeTimes" type="string">
+            <column name="day_free_times" length="50">
+                <comment>&#230;&#175;&#143;&#230;&#151;&#165;&#229;&#133;&#141;&#232;&#180;&#185;&#230;&#172;&#161;&#230;&#149;&#176;</comment>
+            </column>
+        </property>
+        <property name="winRate" type="big_decimal">
+            <column name="win_rate" precision="20" scale="0">
+                <comment>&#228;&#184;&#173;&#229;&#165;&#150;&#230;&#166;&#130;&#231;&#142;&#135;</comment>
+            </column>
+        </property>
+        <property name="extraGetName" type="java.lang.Integer">
+            <column name="extra_get_name">
+                <comment>
+                &#229;&#162;&#158;&#229;&#138;&#160;&#230;&#172;&#161;&#230;&#149;&#176;/&#229;&#162;&#158;&#229;&#138;&#160;&#230;&#138;&#149;&#232;&#181;&#132;&#233;&#135;&#145;&#233;&#162;&#157;&#229;&#177;&#149;&#231;&#164;&#186;</comment>
+            </column>
+        </property>
+        <property name="extraGetValue" type="java.lang.Integer">
+            <column name="extra_get_value">
+                <comment>
+                &#229;&#162;&#158;&#229;&#138;&#160;&#230;&#172;&#161;&#230;&#149;&#176;/&#229;&#162;&#158;&#229;&#138;&#160;&#230;&#138;&#149;&#232;&#181;&#132;&#233;&#135;&#145;&#233;&#162;&#157;val(json)</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="csysid" type="java.lang.Integer">
+            <column name="csysid">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#232;&#128;&#133;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

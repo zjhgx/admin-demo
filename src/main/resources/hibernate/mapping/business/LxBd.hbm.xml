@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxBd" table="lx_bd" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="int">
+            <column name="uid" not-null="true" unique="true">
+                <comment>uid</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="32" not-null="true">
+                <comment>&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="32" not-null="true">
+                <comment>&#230;&#137;&#139;&#230;&#156;&#186;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="identityId" type="string">
+            <column name="identity_id" length="256">
+                <comment>&#232;&#186;&#171;&#228;&#187;&#189;&#232;&#175;&#129;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="cardId" type="string">
+            <column name="card_id" length="64" not-null="true">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#229;&#141;&#161;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="cardOfDeposit" type="string">
+            <column name="card_of_deposit" length="64" not-null="true">
+                <comment>&#229;&#188;&#128;&#230;&#136;&#183;&#233;&#147;&#182;&#232;&#161;&#140;</comment>
+            </column>
+        </property>
+        <property name="positionLevel" type="byte">
+            <column name="position_level" not-null="true">
+                <comment>0-&#228;&#184;&#128;&#231;&#186;&#167;BD 1-&#228;&#186;&#140;&#231;&#186;&#167;BD 2-&#228;&#184;&#137;&#231;&#186;&#167;BD</comment>
+            </column>
+        </property>
+        <property name="parentId" type="java.lang.Integer">
+            <column name="parent_id">
+                <comment>&#228;&#184;&#138;&#231;&#186;&#167;DB</comment>
+            </column>
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="256" not-null="true">
+                <comment>&#232;&#180;&#159;&#232;&#180;&#163;&#229;&#140;&#186;&#229;&#159;&#159;: code1;;code2;;code3</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>0-&#229;&#156;&#168;&#232;&#129;&#140; 1-&#229;&#133;&#165;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183;&#228;&#184;&#173;
+                2-&#229;&#133;&#165;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183;-&#233;&#169;&#179;&#229;&#155;&#158;
+                3-&#231;&#166;&#187;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183;&#228;&#184;&#173;
+                4-&#231;&#166;&#187;&#232;&#129;&#140;&#231;&#148;&#179;&#232;&#175;&#183;-&#233;&#169;&#179;&#229;&#155;&#158;
+                5-&#229;&#183;&#178;&#231;&#166;&#187;&#232;&#129;&#140;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="int">
+            <column name="mtime" not-null="true">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

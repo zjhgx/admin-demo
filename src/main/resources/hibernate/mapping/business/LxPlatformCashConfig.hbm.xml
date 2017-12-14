@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxPlatformCashConfig" table="lx_platform_cash_config" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#229;&#144;&#136;&#228;&#189;&#156;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="minCashMoney" type="java.lang.Integer">
+            <column name="min_cash_money">
+                <comment>&#232;&#181;&#183;&#230;&#143;&#144;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="cashTip" type="java.lang.Integer">
+            <column name="cash_tip">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#229;&#136;&#176;&#232;&#180;&#166;&#230;&#151;&#182;&#233;&#151;&#180;&#232;&#174;&#190;&#231;&#189;&#174;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="csysid" type="java.lang.Integer">
+            <column name="csysid">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#232;&#128;&#133;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

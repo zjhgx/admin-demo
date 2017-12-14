@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxMerchantInfo" table="lx_merchant_info" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#229;&#175;&#185;&#229;&#186;&#148;&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="accountUid" type="java.lang.Integer">
+            <column name="account_uid">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#232;&#180;&#166;&#230;&#136;&#183;uid</comment>
+            </column>
+        </property>
+        <property name="PMid" type="java.lang.Integer">
+            <column name="p_mid">
+                <comment>&#231;&#136;&#182;&#229;&#149;&#134;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="licences" type="string">
+            <column name="licences" length="50">
+                <comment>&#232;&#144;&#165;&#228;&#184;&#154;&#230;&#137;&#167;&#231;&#133;&#167;</comment>
+            </column>
+        </property>
+        <property name="person" type="string">
+            <column name="person" length="20">
+                <comment>&#230;&#179;&#149;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="tel" type="java.lang.Integer">
+            <column name="tel">
+                <comment>&#233;&#151;&#168;&#229;&#186;&#151;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="provice" type="java.lang.Integer">
+            <column name="provice">
+                <comment>&#231;&#156;&#129;&#228;&#187;&#189;</comment>
+            </column>
+        </property>
+        <property name="city" type="java.lang.Integer">
+            <column name="city">
+                <comment>&#229;&#184;&#130;</comment>
+            </column>
+        </property>
+        <property name="area" type="java.lang.Integer">
+            <column name="area">
+                <comment>&#229;&#140;&#186;</comment>
+            </column>
+        </property>
+        <property name="proviceId" type="java.lang.Integer">
+            <column name="provice_id">
+                <comment>&#231;&#156;&#129;id</comment>
+            </column>
+        </property>
+        <property name="cityId" type="java.lang.Integer">
+            <column name="city_id">
+                <comment>&#229;&#184;&#130;id</comment>
+            </column>
+        </property>
+        <property name="areaId" type="java.lang.Integer">
+            <column name="area_id">
+                <comment>&#229;&#140;&#186;id</comment>
+            </column>
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200">
+                <comment>&#229;&#133;&#183;&#228;&#189;&#147;&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="65535">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#228;&#187;&#139;&#231;&#187;&#141;</comment>
+            </column>
+        </property>
+        <property name="personTel" type="string">
+            <column name="person_tel" length="20">
+                <comment>&#230;&#179;&#149;&#228;&#186;&#186;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="shopArea" type="string">
+            <column name="shop_area" length="20">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#233;&#157;&#162;&#231;&#167;&#175;</comment>
+            </column>
+        </property>
+        <property name="assort" type="java.lang.Integer">
+            <column name="assort">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#229;&#136;&#134;&#231;&#177;&#187;</comment>
+            </column>
+        </property>
+        <property name="subAssort" type="java.lang.Integer">
+            <column name="sub_assort">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#229;&#173;&#144;&#229;&#136;&#134;&#231;&#177;&#187;</comment>
+            </column>
+        </property>
+        <property name="staffNum" type="java.lang.Integer">
+            <column name="staff_num">
+                <comment>&#229;&#145;&#152;&#229;&#183;&#165;&#228;&#186;&#186;&#230;&#149;&#176;</comment>
+            </column>
+        </property>
+        <property name="personIdImgFront" type="java.lang.Integer">
+            <column name="person_id_img_front">
+                <comment>&#230;&#179;&#149;&#228;&#186;&#186;&#232;&#186;&#171;&#228;&#187;&#189;&#232;&#175;&#129;&#230;&#173;&#163;&#233;&#157;&#162;</comment>
+            </column>
+        </property>
+        <property name="personIdImgBack" type="java.lang.Integer">
+            <column name="person_id_img_back">
+                <comment>&#230;&#179;&#149;&#228;&#186;&#186;&#232;&#186;&#171;&#228;&#187;&#189;&#232;&#175;&#129;&#229;&#143;&#141;&#233;&#157;&#162;</comment>
+            </column>
+        </property>
+        <property name="licenceImg" type="java.lang.Integer">
+            <column name="licence_img">
+                <comment>&#232;&#144;&#165;&#228;&#184;&#154;&#230;&#137;&#167;&#231;&#133;&#167;&#231;&#133;&#167;&#231;&#137;&#135;</comment>
+            </column>
+        </property>
+        <property name="logo" type="java.lang.Integer">
+            <column name="logo">
+                <comment>logo&#229;&#155;&#190;&#231;&#137;&#135;</comment>
+            </column>
+        </property>
+        <property name="images" type="string">
+            <column name="images" length="50">
+                <comment>&#229;&#174;&#163;&#228;&#188;&#160;&#229;&#155;&#190;&#231;&#137;&#135;
+                &#233;&#128;&#151;&#229;&#143;&#183;&#229;&#136;&#134;&#229;&#137;&#178;</comment>
+            </column>
+        </property>
+        <property name="successOrderNums" type="java.lang.Integer">
+            <column name="success_order_nums">
+                <comment>
+                &#230;&#136;&#144;&#229;&#138;&#159;&#228;&#185;&#176;&#229;&#141;&#149;&#230;&#149;&#176;(&#229;&#175;&#185;&#229;&#186;&#148;&#228;&#186;&#186;&#230;&#176;&#148;)</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;&#231;&#138;&#182;&#230;&#128;&#129;
+                1&#227;&#128;&#130;&#230;&#156;&#141;&#229;&#138;&#161;&#228;&#184;&#173;&#239;&#188;&#140;2 &#232;&#141;&#137;&#231;&#168;&#191;
+                &#239;&#188;&#140;3.&#232;&#135;&#170;&#228;&#184;&#187;&#231;&#148;&#179;&#232;&#175;&#183;&#239;&#188;&#140;4.&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#156;&#170;&#233;&#128;&#154;&#232;&#191;&#135;&#239;&#188;&#140;5.&#229;&#190;&#133;&#231;&#161;&#174;&#232;&#174;&#164;&#239;&#188;&#140;6
+                &#230;&#139;&#146;&#231;&#187;&#157;&#231;&#161;&#174;&#232;&#174;&#164;&#239;&#188;&#140;7
+                &#229;&#190;&#133;&#229;&#185;&#179;&#229;&#143;&#176;&#229;&#174;&#161;&#230;&#160;&#184;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+    </class>
+</hibernate-mapping>

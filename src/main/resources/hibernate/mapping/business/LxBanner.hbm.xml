@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxBanner" table="lx_banner" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100">
+                <comment>&#230;&#160;&#135;&#233;&#162;&#152;</comment>
+            </column>
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment>banner&#228;&#189;&#141;&#231;&#189;&#174;</comment>
+            </column>
+        </property>
+        <property name="img" type="string">
+            <column name="img" length="100">
+                <comment>&#229;&#155;&#190;&#231;&#137;&#135;&#232;&#183;&#175;&#229;&#190;&#132;</comment>
+            </column>
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;</comment>
+            </column>
+        </property>
+        <property name="href" type="string">
+            <column name="href" length="100">
+                <comment>&#232;&#191;&#158;&#230;&#142;&#165;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="is_active">
+                <comment>1-&#230;&#191;&#128;&#230;&#180;&#187;&#239;&#188;&#140;0&#230;&#156;&#170;&#230;&#191;&#128;&#230;&#180;&#187;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535">
+                <comment>&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="miNo" type="string">
+            <column name="mi_no" length="20">
+                <comment>&#230;&#142;&#165;&#229;&#133;&#165;&#231;&#130;&#185;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="starttime" type="java.lang.Integer">
+            <column name="starttime" />
+        </property>
+        <property name="endtime" type="java.lang.Integer">
+            <column name="endtime" />
+        </property>
+    </class>
+</hibernate-mapping>

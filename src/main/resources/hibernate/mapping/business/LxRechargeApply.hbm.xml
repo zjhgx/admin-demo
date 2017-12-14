@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxRechargeApply" table="lx_recharge_apply" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="creator" type="java.lang.Integer">
+            <column name="creator">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#229;&#133;&#133;&#229;&#128;&#188;&#231;&#148;&#168;&#230;&#136;&#183;</comment>
+            </column>
+        </property>
+        <property name="rechargeNo" type="string">
+            <column name="recharge_no" length="30">
+                <comment>&#229;&#133;&#133;&#229;&#128;&#188;&#230;&#181;&#129;&#230;&#176;&#180;</comment>
+            </column>
+        </property>
+        <property name="bankCode" type="string">
+            <column name="bank_code" length="10">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#228;&#187;&#163;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="bankName" type="string">
+            <column name="bank_name" length="50">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="accountNo" type="string">
+            <column name="account_no" length="30">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#232;&#180;&#166;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="accountName" type="string">
+            <column name="account_name" length="30">
+                <comment>&#229;&#184;&#144;&#230;&#136;&#183;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="applyAmount" type="java.lang.Integer">
+            <column name="apply_amount">
+                <comment>&#231;&#148;&#179;&#232;&#175;&#183;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="actualAmount" type="java.lang.Integer">
+            <column name="actual_amount">
+                <comment>&#229;&#174;&#158;&#233;&#153;&#133;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status">
+                <comment>
+                &#229;&#174;&#161;&#230;&#160;&#184;&#239;&#188;&#140;1&#239;&#188;&#154;&#229;&#190;&#133;&#229;&#164;&#132;&#231;&#144;&#134;&#239;&#188;&#140;2&#239;&#188;&#154;&#229;&#133;&#133;&#229;&#128;&#188;&#230;&#136;&#144;&#229;&#138;&#159;&#239;&#188;&#140;3&#239;&#188;&#154;&#229;&#133;&#133;&#229;&#128;&#188;&#229;&#164;&#177;&#232;&#180;&#165;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="java.lang.Integer">
+            <column name="auditor">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="auditTime" type="java.lang.Integer">
+            <column name="audit_time">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="auditStatus" type="java.lang.Boolean">
+            <column name="audit_status">
+                <comment>
+                &#229;&#174;&#161;&#230;&#160;&#184;&#231;&#187;&#147;&#230;&#158;&#156;&#239;&#188;&#140;1&#239;&#188;&#154;&#229;&#190;&#133;&#229;&#174;&#161;&#230;&#160;&#184;&#239;&#188;&#140;2&#239;&#188;&#154;&#229;&#174;&#161;&#230;&#160;&#184;&#233;&#128;&#154;&#232;&#191;&#135;&#239;&#188;&#140;3&#239;&#188;&#154;&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#184;&#141;&#233;&#128;&#154;&#232;&#191;&#135;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000">
+                <comment>&#229;&#164;&#135;&#230;&#179;&#168;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

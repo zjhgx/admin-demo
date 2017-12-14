@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxUserAccountRecord" table="lx_user_account_record" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;</comment>
+            </column>
+        </property>
+        <property name="recordNo" type="string">
+            <column name="record_no" length="50" unique="true">
+                <comment>&#230;&#181;&#129;&#230;&#176;&#180;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="toUser" type="java.lang.Integer">
+            <column name="to_user">
+                <comment>
+                &#232;&#181;&#132;&#233;&#135;&#145;&#232;&#189;&#172;&#229;&#135;&#186;&#229;&#136;&#176;&#231;&#148;&#168;&#230;&#136;&#183;&#239;&#188;&#136;&#229;&#134;&#133;&#233;&#131;&#168;&#232;&#189;&#172;&#232;&#180;&#166;&#230;&#137;&#141;&#230;&#156;&#137;&#239;&#188;&#137;</comment>
+            </column>
+        </property>
+        <property name="fromUser" type="java.lang.Integer">
+            <column name="from_user">
+                <comment>&#230;&#157;&#165;&#230;&#186;&#144;&#232;&#180;&#166;&#230;&#136;&#183;</comment>
+            </column>
+        </property>
+        <property name="inOrOut" type="java.lang.Byte">
+            <column name="in_or_out">
+                <comment>1-&#230;&#148;&#182;&#229;&#133;&#165;/2-&#230;&#148;&#175;&#229;&#135;&#186;</comment>
+            </column>
+        </property>
+        <property name="changeAmount" type="big_decimal">
+            <column name="change_amount" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="fromAmount" type="big_decimal">
+            <column name="from_amount" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#137;&#141;&#232;&#180;&#166;&#230;&#136;&#183;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="toAmount" type="big_decimal">
+            <column name="to_amount" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#144;&#142;&#232;&#180;&#166;&#230;&#136;&#183;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="fromCashFreezeMoney" type="big_decimal">
+            <column name="from_cash_freeze_money" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#137;&#141;&#230;&#143;&#144;&#231;&#142;&#176;&#228;&#184;&#173;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="toCashFreezeMoney" type="big_decimal">
+            <column name="to_cash_freeze_money" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#144;&#142;&#230;&#143;&#144;&#231;&#142;&#176;&#228;&#184;&#173;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="fromPayFreezeMoney" type="big_decimal">
+            <column name="from_pay_freeze_money" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#137;&#141;&#230;&#148;&#175;&#228;&#187;&#152;&#228;&#184;&#173;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="toPayFreezeMoney" type="big_decimal">
+            <column name="to_pay_freeze_money" precision="20" scale="0">
+                <comment>&#229;&#143;&#152;&#229;&#140;&#150;&#229;&#144;&#142;&#230;&#148;&#175;&#228;&#187;&#152;&#228;&#184;&#173;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000">
+                <comment>&#229;&#164;&#135;&#230;&#179;&#168;</comment>
+            </column>
+        </property>
+        <property name="ticketId" type="java.lang.Integer">
+            <column name="ticket_id">
+                <comment>&#232;&#191;&#155;&#229;&#135;&#186;&#231;&#165;&#168;id</comment>
+            </column>
+        </property>
+        <property name="cashId" type="java.lang.Integer">
+            <column name="cash_id">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;id</comment>
+            </column>
+        </property>
+        <property name="userOrderId" type="java.lang.Integer">
+            <column name="user_order_id">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;&#230;&#148;&#175;&#228;&#187;&#152;&#232;&#174;&#162;&#229;&#141;&#149;id</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+        <property name="jdbcExceptionTranslator"><ref bean="jdbcExceptionTranslator"/></property>
+    </bean>
+
+    <bean id="jdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+        <property name="dataSource"><ref bean="localDataSource"/></property>
+    </bean>
+    <bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor" />
+    <bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+        <property name="nativeJdbcExtractor">
+            <ref bean="nativeJdbcExtractor" />
+        </property>
+    </bean>
+
+    <!-- 异常拦截器  记录异常日志-->
+    <bean id="exceptionInterceptor" class="com.cs.lexiao.admin.framework.exception.core.ExceptionLogAOP"/>
+    <!--  事务管理 -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+     <bean id="transactionTemplate"
+          class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true" propagation="SUPPORTS" />
+            <tx:method name="find*" read-only="true" propagation="SUPPORTS" />
+            <tx:method name="query*" read-only="true" propagation="SUPPORTS" />
+            <tx:method name="autoGenCode"  propagation="REQUIRES_NEW" />
+            <tx:method name="openAccount"  propagation="NOT_SUPPORTED" />
+          	<tx:method name="signContractSafe" propagation="NOT_SUPPORTED" />
+			<tx:method name="safeSignContract" propagation="REQUIRED" />
+            <!--
+            <tx:method name="updateAfterCommuTrans"  propagation="REQUIRES_NEW" />
+            <tx:method name="updateAfterMZCommuTrans"  propagation="REQUIRES_NEW" />
+            <tx:method name="updateAfterCZCommuTrans"  propagation="REQUIRES_NEW" />
+            <tx:method name="createAcctFlowNewSession"  propagation="REQUIRES_NEW" />
+            <tx:method name="buildAcctRecord"  propagation="REQUIRES_NEW" />
+            <tx:method name="deleteAcctRecord"  propagation="REQUIRES_NEW" />
+            <tx:method name="buildNegativeAcctRecord"  propagation="REQUIRES_NEW" />
+             -->
+            <tx:method name="clearEndProcessInstance"  propagation="REQUIRES_NEW" />
+            <tx:method name="*" read-only="false" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="txServiceFosc" expression="execution (* com.cs.lexiao.admin..*Service*.*(..))
+			and !execution (* com.cs.lexiao.admin..action.*.*(..))" />
+        <aop:advisor pointcut-ref="txServiceFosc" advice-ref="txAdvice" />
+        <aop:advisor pointcut-ref="txServiceFosc" advice-ref="exceptionInterceptor" />
+    </aop:config>
+
+
+    
+	<bean id="dataSourceParent" class="org.apache.tomcat.jdbc.pool.DataSource" abstract="true" destroy-method="close">
+		<property name="driverClassName" >
+            <value>net.sf.log4jdbc.DriverSpy</value>
+        </property>
+        <property name="initialSize" value="${dataSource.dbcp.initialSize}"/>
+        <property name="maxActive" value="${dataSource.dbcp.maxActive}"/>
+        <property name="maxWait" value="${dataSource.dbcp.maxWait}"/>
+        <property name="maxIdle" value="${dataSource.dbcp.maxIdle}"/>
+        <property name="minIdle" value="${dataSource.dbcp.minIdle}"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"/>
+	</bean>
+
+  
+
+    <!-- lxadmin -->
+    <bean id="localDataSource" parent="dataSourceParent">
+        <property name="url">
+            <value><![CDATA[jdbc:log4jdbc:mysql://${lxadmin.jdbc.url}/${lxadmin.jdbc.database}?characterEncoding=utf-8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true]]></value>
+        </property>
+        <property name="username">
+            <value>${lxadmin.jdbc.username}</value>
+        </property>
+        <property name="password">
+            <value>${lxadmin.jdbc.password}</value>
+        </property>
+    </bean>
+ 
+
+    <bean id="myEntityInterceptor" class="com.cs.lexiao.admin.framework.interceptor.HibernateEntityInterceptor" />
+    <bean id="sessionFactory" parent="sessionFactoryParent" class="com.cs.lexiao.admin.framework.annotation.XAnnotationSessionFactoryBean">
+        <property name="entityInterceptor">
+            <ref bean="myEntityInterceptor"/>
+        </property>
+
+        <property name="dataSource">
+            <ref local="localDataSource"/>
+        </property>
+       
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:hibernate/mapping/**/*.hbm.xml</value>
+     	    	<!-- <value>classpath*:/hibernate/mapping/**/*.hbm.xml</value> -->
+                
+            </list>
+        </property>
+        <property name="packagesToScan" value="com.cs.lexiao.admin"/>
+
+        <property name="lobHandler" ref="oracleLobHandler" />
+
+    </bean>
+    
+    
+    
+	<bean id="sysHibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate"> 
+		<property name="sessionFactory"><ref bean="sysSessionFactory"/></property> 
+		<property name="jdbcExceptionTranslator"><ref bean="sysJdbcExceptionTranslator"/></property> 
+	</bean>
+	<bean id="sysJdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator"> 
+		<property name="dataSource"><ref bean="dataSourceMaster"/></property> 
+	</bean>
+	
+	<!--  事务管理 -->
+ 	<bean id="sysTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sysSessionFactory"></property>
+	</bean>
+	<tx:advice id="sysTxAdvice" transaction-manager="sysTransactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" propagation="SUPPORTS" />
+			<tx:method name="find*" read-only="true" propagation="SUPPORTS" />
+			<tx:method name="query*" read-only="true" propagation="SUPPORTS" />
+			
+			<tx:method name="doPrjPay" read-only="false" propagation="NEVER" />
+			<tx:method name="callBackForOrderPay" read-only="false" propagation="NEVER" />
+			<tx:method name="doOrderPay" read-only="false" propagation="NEVER" />
+			<tx:method name="doOrderPayForError" read-only="false" propagation="NEVER" />
+			<tx:method name="callBackForPrjPay" read-only="false" propagation="NEVER" />
+			
+			<tx:method name="doCompensate" read-only="false" propagation="NEVER" />
+			<tx:method name="overdueAutoTask" read-only="false" propagation="NEVER" />
+
+			<tx:method name="dealXianxiaRecharge" read-only="false" propagation="NEVER" />
+			<tx:method name="callBackForDealXianxia" read-only="false" propagation="NEVER" />
+			<tx:method name="dealCashout" read-only="false" propagation="NEVER" />
+			<tx:method name="cashoutBatchUpdate" read-only="false" propagation="NEVER" />
+			<tx:method name="callBackForDealCashout" read-only="false" propagation="NEVER" />
+			<tx:method name="withDrawCashToUser" read-only="false" propagation="NEVER" />
+			<tx:method name="withDrawCashToPlatform" read-only="false" propagation="NEVER" />
+			<tx:method name="sendRechargeRequestToQueue" read-only="false" propagation="NEVER" />
+			<tx:method name="sendOrderPayRequest" read-only="false" propagation="NEVER" />
+			<tx:method name="drawBackChedaiFee" read-only="false" propagation="NEVER" />
+			<tx:method name="*Never" read-only="false" propagation="NEVER" />
+
+			<tx:method name="autoProcessPrjPayError" read-only="false" propagation="NEVER" />
+			<tx:method name="beforePrjPay" read-only="false" propagation="NEVER" />
+			<tx:method name="doOnePrjPay" read-only="false" propagation="NEVER" />
+			<tx:method name="msgInsert" read-only="false" propagation="NEVER" />
+			<tx:method name="prjOrderPayEnd" read-only="false" propagation="NEVER" />
+			<tx:method name="processErrorMsg" read-only="false" propagation="NEVER" />
+			<tx:method name="autoGenCode"  propagation="REQUIRES_NEW" />
+			<tx:method name="clearEndProcessInstance"  propagation="REQUIRES_NEW" />
+			<tx:method name="saveRequestLog"  propagation="REQUIRES_NEW" />			
+			<tx:method name="*" read-only="false" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="sysTxService" expression="execution (* com.cs.lexiao.admin..*Service*.*(..)) or execution (* com.cs.lexiao.admin..*Connector.*(..))) 
+		and !execution (* com.cs.lexiao.admin..action.*.*(..)) and !execution (* com.cs.lexiao.admin..*Untrans*.*(..)) and !execution (* com.cs.lexiao.admin.demo..*Service*.*(..)) and !execution (* com.cs.lexiao.admin..*Service*.*(..))" />
+		<aop:advisor pointcut-ref="sysTxService" advice-ref="sysTxAdvice" />
+		<aop:advisor pointcut-ref="sysTxService" advice-ref="exceptionInterceptor" />
+	</aop:config>
+
+	<bean id="sysSessionFactory" parent="sessionFactoryParent" class="com.cs.lexiao.admin.framework.annotation.XAnnotationSessionFactoryBean">
+     	<property name="dataSource">
+     		<ref local="dataSourceMaster"/>
+     	</property>
+    
+     	<property name="mappingLocations">
+     	  <list>
+     	    <!-- <value>classpath:/com/cs/lexiao/admin/mapping/**/*.hbm.xml</value> -->
+     	  	   <value>classpath:hibernate/mapping/**/*.hbm.xml</value>
+     	  </list>
+     	</property>
+    </bean>  
+        
+
+	 <!-- 主数据库 -->	 	
+	 <bean id="dataSourceMaster" parent="dataSourceParent">
+	   <property name="url">
+	   	    <value><![CDATA[jdbc:log4jdbc:mysql://${lexiao.jdbc.url}/${lexiao.jdbc.database}?characterEncoding=utf-8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true]]></value>
+	   </property>
+		 <property name="username">
+			 <!-- <value>lcs</value> -->
+			 <value>${lexiao.jdbc.username}</value>
+		 </property>
+		 <property name="password">
+			 <!-- <value>C2ECDF0BCD9219C43E8C4781BF515F8F9429EA82</value> -->
+			 <value>${lexiao.jdbc.password}</value>
+		 </property>
+		<property name="testOnBorrow" value="true"/>
+	 	<property name="testWhileIdle" value="true"/>
+		<property name="validationQuery" value="select 1 from dual"/>
+	 </bean>
+	 
+
+	
+	<bean id="sessionFactoryParent" abstract="true" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="entityInterceptor">   
+               <ref bean="myEntityInterceptor"/>   
+        </property>
+        <property name="hibernateProperties">
+     		<props>     			
+     			<!--<prop key="hibernate.dialect">org.hibernate.dialect.DB2Dialect</prop> --> 
+     			<prop key="hibernate.dialect">com.cs.lexiao.admin.framework.dialect.MySQLDialect</prop>   			
+     			<prop key="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</prop>
+     			<prop key="hibernate.show_sql">false</prop>
+     			<prop key="hibernate.format_sql">false</prop>		
+     			<!-- <prop key="hibernate.default_schema">xcars</prop> -->
+     			<prop key="hibernate.jdbc.use_scrollable.resultset">true</prop> 
+     			<prop key="hibernate.cache.use_query_cache">true</prop>
+     			<prop key="hibernate.cache.use_second_level_cache">true</prop>      
+	            <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+	            <prop key="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</prop>
+				<prop key="hibernate.connection.release_mode">after_transaction</prop>                
+	            
+     		</props>     	  	
+     	</property>  
+     	<property name="typeDefinitions">
+     		<list>
+     			<bean class="org.springframework.orm.hibernate3.TypeDefinitionBean">
+     				<property name="typeName" value="secDate"/>
+     				<property name="typeClass" value="com.cs.lexiao.admin.framework.base.hibernate.SecondDateType"/>
+     			</bean>
+     			<bean class="org.springframework.orm.hibernate3.TypeDefinitionBean">
+     				<property name="typeName" value="cent"/>
+     				<property name="typeClass" value="com.cs.lexiao.admin.framework.base.hibernate.CentMoneyType"/>
+     			</bean>
+     			<bean class="org.springframework.orm.hibernate3.TypeDefinitionBean">
+     				<property name="typeName" value="perMille"/>
+     				<property name="typeClass" value="com.cs.lexiao.admin.framework.base.hibernate.PerMilleRate"/>
+     			</bean>
+                <bean class="org.springframework.orm.hibernate3.TypeDefinitionBean">
+                    <property name="typeName" value="xclob"/>
+                    <property name="typeClass" value="org.springframework.orm.hibernate3.support.ClobStringType"/>
+                </bean>     			
+     		</list>
+     	</property>
+	</bean>	
+
+	
+</beans>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxAttach" table="lx_attach" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="attachType" type="string">
+            <column name="attach_type" length="50" not-null="true" />
+        </property>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid" />
+        </property>
+        <property name="uploadTime" type="java.lang.Integer">
+            <column name="uploadTime" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="20" />
+        </property>
+        <property name="extension" type="string">
+            <column name="extension" length="20" />
+        </property>
+        <property name="hash" type="string">
+            <column name="hash" length="32" />
+        </property>
+        <property name="private_" type="java.lang.Boolean">
+            <column name="private" />
+        </property>
+        <property name="isDel" type="java.lang.Boolean">
+            <column name="isDel" />
+        </property>
+        <property name="savepath" type="string">
+            <column name="savepath" />
+        </property>
+        <property name="savename" type="string">
+            <column name="savename" />
+        </property>
+        <property name="savedomain" type="java.lang.Byte">
+            <column name="savedomain" />
+        </property>
+        <property name="origName" type="string">
+            <column name="origName">
+                <comment>&#229;&#142;&#159;&#229;&#167;&#139;&#228;&#184;&#138;&#228;&#188;&#160;&#230;&#150;&#135;&#228;&#187;&#182;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="noTemp" type="java.lang.Boolean">
+            <column name="noTemp">
+                <comment>1&#228;&#184;&#186;&#231;&#156;&#159;&#229;&#174;&#158;&#232;&#183;&#175;&#229;&#190;&#132;&#228;&#184;&#173;</comment>
+            </column>
+        </property>
+        <property name="saveapppath" type="string">
+            <column name="saveapppath" />
+        </property>
+        <property name="imgserver" type="string">
+            <column name="imgserver">
+                <comment>
+                &#229;&#155;&#190;&#231;&#137;&#135;&#230;&#137;&#128;&#229;&#173;&#152;&#229;&#155;&#190;&#231;&#137;&#135;&#230;&#156;&#141;&#229;&#138;&#161;&#229;&#153;&#168;&#232;&#183;&#175;&#229;&#190;&#132;</comment>
+            </column>
+        </property>
+        <property name="pdfpathfile" type="string">
+            <column name="pdfpathfile" />
+        </property>
+        <property name="desc" type="string">
+            <column name="desc">
+                <comment>&#233;&#162;&#157;&#229;&#164;&#150;&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="isInoursite" type="java.lang.Byte">
+            <column name="is_inoursite">
+                <comment>
+                1&#228;&#187;&#163;&#232;&#161;&#168;&#228;&#184;&#139;&#232;&#189;&#189;&#229;&#136;&#176;&#230;&#136;&#145;&#228;&#187;&#172;&#231;&#179;&#187;&#231;&#187;&#159;&#228;&#186;&#134;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+    </class>
+</hibernate-mapping>

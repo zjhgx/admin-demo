@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxMerchantImg" table="lx_merchant_img" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="MId" type="int">
+            <column name="m_id" not-null="true">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="imgId" type="int">
+            <column name="img_id" not-null="true">
+                <comment>&#229;&#155;&#190;&#231;&#137;&#135;ID</comment>
+            </column>
+        </property>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>&#231;&#177;&#187;&#229;&#158;&#139; 0:logo 1:&#229;&#174;&#163;&#228;&#188;&#160;&#229;&#155;&#190;&#231;&#137;&#135;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129; 0:&#229;&#144;&#175;&#231;&#148;&#168; 1:&#228;&#184;&#139;&#230;&#158;&#182;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="creator" type="java.lang.Integer">
+            <column name="creator" />
+        </property>
+        <property name="modifier" type="java.lang.Integer">
+            <column name="modifier" />
+        </property>
+    </class>
+</hibernate-mapping>

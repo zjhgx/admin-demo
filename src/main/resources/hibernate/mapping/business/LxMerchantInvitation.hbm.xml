@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxMerchantInvitation" table="lx_merchant_invitation" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="mid" type="java.lang.Integer">
+            <column name="mid">
+                <comment>&#233;&#130;&#128;&#232;&#175;&#183;&#229;&#149;&#134;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="firstInvest" type="big_decimal">
+            <column name="first_invest" precision="20" scale="0">
+                <comment>&#233;&#166;&#150;&#230;&#138;&#149;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="reward" type="big_decimal">
+            <column name="reward" precision="20" scale="0">
+                <comment>&#229;&#165;&#150;&#229;&#138;&#177;&#233;&#135;&#145;</comment>
+            </column>
+        </property>
+        <property name="rewardType" type="java.lang.Byte">
+            <column name="reward_type">
+                <comment>1&#230;&#179;&#168;&#229;&#134;&#140;2&#233;&#166;&#150;&#230;&#138;&#149;</comment>
+            </column>
+        </property>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#230;&#138;&#149;&#232;&#181;&#132;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+    </class>
+</hibernate-mapping>

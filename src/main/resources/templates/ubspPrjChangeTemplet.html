@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<style type="text/css">
+
+</style>
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+<div>
+	<p class=MsoNormal><span style='font-family:宋体'>此信由</span><span lang=EN-US>xxx业务管理</span><span
+	style='font-family:宋体'>系统发出，请勿直接回复，谢谢。</span></p>
+	<p class=MsoNormal><span lang=EN-US>----------------------------------------------------------------------</span></p>
+	<p class=MsoNormal></p>
+	<p class=MsoNormal><span style='font-family:宋体'>${message}</span><p/>
+	<table border="1" style="width: 90%;">
+		<thead>
+			<tr style="background-color: #efefef;">
+			    <th width="7%" style="text-align:center;"></th>
+			    <th width="10%" style="text-align:center;">项目名称</th>
+				<th width="10%" style="text-align:center;">ubsp项目名称</th>
+				<th width="8%" style="text-align:center;">产品名称</th>
+				<th width="8%" style="text-align:center;">担保人</th>
+				<th width="7%" style="text-align:center;">融资金额</th>
+				<th width="7%" style="text-align:center;">融资期限</th>
+				<th width="7%" style="text-align:center;">用款开始日期</th>
+				<th width="7%" style="text-align:center;">用款结束日期</th>
+				<th width="7%" style="text-align:center;">提前还款天数</th>
+				<th width="7%" style="text-align:center;">展期天数</th>
+				<th width="7%" style="text-align:center;">业务类型</th>
+				<th width="8%" style="text-align:center;">变更时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<#list prjApplyList as prjApply>
+			 <tr style="background-color: #efefef;">
+			    <td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.change}</div></td>
+			    <td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.prjName?default("未生成")}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.projectName}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.productName}</div></td>
+				<td><div style="TEXT-ALIGN:left;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.guarantor}</div></td>
+				<td><div style="TEXT-ALIGN:right;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.demandAmount}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.timeLimit}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.startTime?string("yyyy-MM-dd")}</div></td>
+				<td><div style="TEXT-ALIGN:left;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.endTime?string("yyyy-MM-dd")}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.repayDaysInAdvance}</div></td>
+				<td><div style="TEXT-ALIGN:center;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.displayDays}</div></td>
+				<td><div style="TEXT-ALIGN:left;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.businessTypeName}</div></td>
+				<td><div style="TEXT-ALIGN:left;word-wrap:break-word;white-space:normal;"class="datagrid-cell">${prjApply.changeTime}</div></td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+</div>
+<p class=MsoNormal><span lang=EN-US>----------------------------------------------------------------------</span></p>
+<p class=MsoNormal><span style='font-family:宋体'>浙江某某集团控股有限公司</span><p/>
+<p class=MsoNormal><span style='font-family:宋体'>xx区xx产业园5#8F（）</span><p/>
+<p class=MsoNormal><span style='font-family:宋体'>邮编：310020</span><p/>
+<p class=MsoNormal><span style='font-family:宋体'>电话：+86-571- 81968322</span><p/>
+<p class=MsoNormal><span style='font-family:宋体'>传真：+86-571-89939766</span><p/>
+<p class=MsoNormal><span style='font-family:宋体'>E-mail： ubsp@upg.cn</span><p/>
+</body>
+
+</html>

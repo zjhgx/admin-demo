@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxCashoutApply" table="lx_cashout_apply" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="cashoutNo" type="string">
+            <column name="cashout_no" length="30" unique="true">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#230;&#181;&#129;&#230;&#176;&#180;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="outUid" type="java.lang.Integer">
+            <column name="out_uid">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="cashUid" type="java.lang.Integer">
+            <column name="cash_uid">
+                <comment>&#232;&#181;&#132;&#233;&#135;&#145;&#229;&#189;&#146;&#229;&#177;&#158;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="applyAmount" type="java.lang.Integer">
+            <column name="apply_amount">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="actualAmount" type="java.lang.Integer">
+            <column name="actual_amount">
+                <comment>&#229;&#136;&#176;&#229;&#184;&#144;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="feeRate" type="java.lang.Integer">
+            <column name="fee_rate">
+                <comment>&#232;&#180;&#185;&#231;&#142;&#135;(&#229;&#141;&#131;&#229;&#136;&#134;&#228;&#185;&#139;&#229;&#135;&#160;)</comment>
+            </column>
+        </property>
+        <property name="fee" type="java.lang.Integer">
+            <column name="fee">
+                <comment>&#232;&#180;&#185;&#231;&#148;&#168;</comment>
+            </column>
+        </property>
+        <property name="actualDate" type="java.lang.Integer">
+            <column name="actual_date">
+                <comment>&#229;&#136;&#176;&#229;&#184;&#144;&#230;&#151;&#165;&#230;&#156;&#159;</comment>
+            </column>
+        </property>
+        <property name="days" type="java.lang.Byte">
+            <column name="days">
+                <comment>&#229;&#136;&#176;&#229;&#184;&#144;&#229;&#164;&#169;&#230;&#149;&#176;</comment>
+            </column>
+        </property>
+        <property name="bankCode" type="string">
+            <column name="bank_code" length="10">
+                <comment>&#230;&#137;&#128;&#229;&#177;&#158;&#233;&#147;&#182;&#232;&#161;&#140;&#228;&#187;&#163;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="bankName" type="string">
+            <column name="bank_name" length="50">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="accountNo" type="string">
+            <column name="account_no" length="30">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#232;&#180;&#166;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="accountName" type="string">
+            <column name="account_name" length="30">
+                <comment>&#230;&#143;&#144;&#231;&#142;&#176;&#232;&#180;&#166;&#229;&#143;&#183;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="channel" type="string">
+            <column name="channel" length="10">
+                <comment>&#230;&#184;&#160;&#233;&#129;&#147;&#231;&#188;&#150;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="transNo" type="string">
+            <column name="trans_no" length="30" unique="true">
+                <comment>&#230;&#184;&#160;&#233;&#129;&#147;&#232;&#191;&#148;&#229;&#155;&#158;&#230;&#181;&#129;&#230;&#176;&#180;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="transRet" type="string">
+            <column name="trans_ret" length="200">
+                <comment>&#230;&#184;&#160;&#233;&#129;&#147;&#232;&#191;&#148;&#229;&#155;&#158;&#231;&#187;&#147;&#230;&#158;&#156;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Byte">
+            <column name="status">
+                <comment>
+                &#230;&#143;&#144;&#231;&#142;&#176;&#231;&#138;&#182;&#230;&#128;&#129;&#239;&#188;&#140;1&#239;&#188;&#154;&#229;&#190;&#133;&#229;&#164;&#132;&#231;&#144;&#134;&#239;&#188;&#140;2&#239;&#188;&#154;&#230;&#143;&#144;&#231;&#142;&#176;&#230;&#136;&#144;&#229;&#138;&#159;&#239;&#188;&#140;3&#239;&#188;&#154;&#230;&#143;&#144;&#231;&#142;&#176;&#229;&#164;&#177;&#232;&#180;&#165;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="java.lang.Integer">
+            <column name="auditor">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="auditTime" type="java.lang.Integer">
+            <column name="audit_time">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="auditStatus" type="java.lang.Boolean">
+            <column name="audit_status">
+                <comment>
+                &#229;&#174;&#161;&#230;&#160;&#184;&#231;&#187;&#147;&#230;&#158;&#156;&#239;&#188;&#140;1&#239;&#188;&#154;&#229;&#190;&#133;&#229;&#174;&#161;&#230;&#160;&#184;&#239;&#188;&#140;2&#239;&#188;&#154;&#229;&#174;&#161;&#230;&#160;&#184;&#233;&#128;&#154;&#232;&#191;&#135;&#239;&#188;&#140;3&#239;&#188;&#154;&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#184;&#141;&#233;&#128;&#154;&#232;&#191;&#135;</comment>
+            </column>
+        </property>
+        <property name="auditRemark" type="string">
+            <column name="audit_remark" length="100">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#132;&#143;&#232;&#167;&#129;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000">
+                <comment>&#229;&#164;&#135;&#230;&#179;&#168;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

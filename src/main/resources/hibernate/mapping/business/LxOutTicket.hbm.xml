@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxOutTicket" table="lx_out_ticket" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="int">
+            <column name="uid" not-null="true">
+                <comment>&#228;&#185;&#144;&#230;&#182;&#136;&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="userOrderId" type="int">
+            <column name="user_order_id" not-null="true">
+                <comment>&#232;&#174;&#162;&#229;&#141;&#149;id</comment>
+            </column>
+        </property>
+        <property name="tradeNo" type="string">
+            <column name="trade_no" length="30" not-null="true">
+                <comment>&#228;&#186;&#164;&#230;&#152;&#147;&#231;&#188;&#150;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="amount" type="int">
+            <column name="amount" not-null="true">
+                <comment>&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#230;&#148;&#175;&#228;&#187;&#152;&#231;&#138;&#182;&#230;&#128;&#129;</comment>
+            </column>
+        </property>
+        <property name="channel" type="string">
+            <column name="channel" length="20">
+                <comment>&#230;&#148;&#175;&#228;&#187;&#152;&#230;&#184;&#160;&#233;&#129;&#147;</comment>
+            </column>
+        </property>
+        <property name="bankNo" type="string">
+            <column name="bank_no" length="30" not-null="true">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#229;&#141;&#161;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="accountRecordId" type="java.lang.Integer">
+            <column name="account_record_id">
+                <comment>&#232;&#181;&#132;&#233;&#135;&#145;&#230;&#181;&#129;&#230;&#176;&#180;id</comment>
+            </column>
+        </property>
+        <property name="callBackStr" type="string">
+            <column name="call_back_str" length="200">
+                <comment>&#233;&#147;&#182;&#232;&#161;&#140;&#232;&#191;&#148;&#229;&#155;&#158;</comment>
+            </column>
+        </property>
+        <property name="inOrOut" type="java.lang.Boolean">
+            <column name="in_or_out">
+                <comment>1&#229;&#133;&#133;&#229;&#128;&#188; 2&#230;&#143;&#144;&#231;&#142;&#176;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="int">
+            <column name="mtime" not-null="true">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

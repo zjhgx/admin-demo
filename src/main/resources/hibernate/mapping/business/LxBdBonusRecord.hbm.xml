@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxBdBonusRecord" table="lx_bd_bonus_record" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="int">
+            <column name="uid" not-null="true">
+                <comment>uid</comment>
+            </column>
+        </property>
+        <property name="bdId" type="int">
+            <column name="bd_id" not-null="true">
+                <comment>bd&#232;&#161;&#168;id</comment>
+            </column>
+        </property>
+        <property name="bonusType" type="byte">
+            <column name="bonus_type" not-null="true">
+                <comment>&#229;&#165;&#150;&#229;&#138;&#177;&#231;&#177;&#187;&#229;&#158;&#139; 0-&#233;&#130;&#128;&#232;&#175;&#183;&#230;&#179;&#168;&#229;&#134;&#140;
+                1-&#233;&#130;&#128;&#232;&#175;&#183;&#233;&#166;&#150;&#230;&#138;&#149;</comment>
+            </column>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="20">
+                <comment>&#233;&#135;&#145;&#233;&#162;&#157;(&#229;&#133;&#131;)</comment>
+            </column>
+        </property>
+        <property name="isDel" type="byte">
+            <column name="is_del" not-null="true">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#229;&#186;&#159;&#229;&#188;&#131;1-&#230;&#156;&#137;&#231;&#148;&#168;
+                0-&#229;&#186;&#159;&#229;&#188;&#131;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="int">
+            <column name="mtime" not-null="true">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

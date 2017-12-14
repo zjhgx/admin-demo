@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxPlatformBanner" table="lx_platform_banner" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="platId" type="int">
+            <column name="plat_id" not-null="true">
+                <comment>&#229;&#185;&#179;&#229;&#143;&#176;ID</comment>
+            </column>
+        </property>
+        <property name="imgId" type="int">
+            <column name="img_id" not-null="true">
+                <comment>&#229;&#155;&#190;&#231;&#137;&#135;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="215" not-null="true">
+                <comment>&#230;&#160;&#135;&#233;&#162;&#152;</comment>
+            </column>
+        </property>
+        <property name="position" type="byte">
+            <column name="position" not-null="true">
+                <comment>&#228;&#189;&#141;&#231;&#189;&#174; 0:&#233;&#166;&#150;&#233;&#161;&#181;</comment>
+            </column>
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="215" not-null="true">
+                <comment>&#232;&#191;&#158;&#230;&#142;&#165;</comment>
+            </column>
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19" not-null="true">
+                <comment>&#229;&#188;&#128;&#229;&#167;&#139;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19" not-null="true">
+                <comment>&#231;&#187;&#147;&#230;&#157;&#159;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="sort" type="int">
+            <column name="sort" not-null="true">
+                <comment>&#229;&#186;&#143;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="215" not-null="true">
+                <comment>&#229;&#164;&#135;&#230;&#179;&#168;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Byte">
+            <column name="status">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129; 0:&#230;&#156;&#137;&#230;&#149;&#136; 1:&#229;&#164;&#177;&#230;&#149;&#136;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime" />
+        </property>
+        <property name="creator" type="java.lang.Integer">
+            <column name="creator" />
+        </property>
+        <property name="modifier" type="java.lang.Integer">
+            <column name="modifier" />
+        </property>
+    </class>
+</hibernate-mapping>

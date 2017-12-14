@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxPlatfromCoupon" table="lx_platfrom_coupon" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>
+                &#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#231;&#177;&#187;&#229;&#158;&#139;&#239;&#188;&#154;1-&#231;&#186;&#162;&#229;&#140;&#133;&#239;&#188;&#155;2-&#230;&#187;&#161;&#229;&#135;&#143;&#229;&#136;&#184;</comment>
+            </column>
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129;&#239;&#188;&#154;1&#230;&#156;&#137;&#230;&#149;&#136;2&#230;&#151;&#160;&#230;&#149;&#136;</comment>
+            </column>
+        </property>
+        <property name="discountAmount" type="big_decimal">
+            <column name="discount_amount" precision="20" scale="0" not-null="true">
+                <comment>&#228;&#188;&#152;&#230;&#131;&#160;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="useRule" type="string">
+            <column name="use_rule" length="65535" not-null="true">
+                <comment>&#228;&#189;&#191;&#231;&#148;&#168;&#232;&#167;&#132;&#229;&#136;&#153;</comment>
+            </column>
+        </property>
+        <property name="callbackUrl" type="string">
+            <column name="callback_url" length="200">
+                <comment>&#229;&#155;&#158;&#232;&#176;&#131;&#229;&#185;&#179;&#229;&#143;&#176;&#229;&#143;&#145;&#229;&#136;&#184;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="int">
+            <column name="ctime" not-null="true">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

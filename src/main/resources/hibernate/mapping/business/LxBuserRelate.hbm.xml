@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxBuserRelate" table="lx_buser_relate" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="sysUserId" type="java.lang.Integer">
+            <column name="sys_user_id">
+                <comment>&#229;&#144;&#142;&#229;&#143;&#176;&#231;&#153;&#187;&#229;&#189;&#149;&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#229;&#175;&#185;&#229;&#186;&#148;lx_user&#231;&#154;&#132;id</comment>
+            </column>
+        </property>
+        <property name="identity" type="string">
+            <column name="identity" length="10">
+                <comment>plat,bd</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime" />
+        </property>
+    </class>
+</hibernate-mapping>

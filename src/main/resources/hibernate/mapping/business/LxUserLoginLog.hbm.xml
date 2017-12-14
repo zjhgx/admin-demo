@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxUserLoginLog" table="lx_user_login_log" catalog="lexiao">
+        <composite-id name="id" class="com.cs.lexiao.admin.mapping.business.LxUserLoginLogId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="uid" type="int">
+                <column name="uid" />
+            </key-property>
+            <key-property name="sorcePlatfrom" type="string">
+                <column name="sorce_platfrom" length="20" />
+            </key-property>
+            <key-property name="lat" type="int">
+                <column name="lat" />
+            </key-property>
+            <key-property name="lon" type="int">
+                <column name="lon" />
+            </key-property>
+            <key-property name="ctime" type="int">
+                <column name="ctime" />
+            </key-property>
+            <key-property name="ip" type="int">
+                <column name="ip" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

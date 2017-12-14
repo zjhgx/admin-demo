@@ -1,0 +1,2 @@
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.hundsun.com/xcars/msg/fixLen", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.cs.lexiao.admin.tools.msg.cfg.fixlen;

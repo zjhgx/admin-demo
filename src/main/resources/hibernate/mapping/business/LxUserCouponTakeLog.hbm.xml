@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxUserCouponTakeLog" table="lx_user_coupon_take_log" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="conpouId" type="java.lang.Integer">
+            <column name="conpou_id">
+                <comment>&#229;&#136;&#184;&#232;&#174;&#176;&#229;&#189;&#149;id</comment>
+            </column>
+        </property>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#233;&#162;&#134;&#229;&#143;&#150;&#229;&#185;&#179;&#229;&#143;&#176;id</comment>
+            </column>
+        </property>
+        <property name="MId" type="java.lang.Integer">
+            <column name="m_id">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#233;&#162;&#134;&#229;&#143;&#150;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

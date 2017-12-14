@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxPlatform" table="lx_platform" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#229;&#185;&#179;&#229;&#143;&#176;&#229;&#175;&#185;&#229;&#186;&#148;&#231;&#148;&#168;&#230;&#136;&#183;uid</comment>
+            </column>
+        </property>
+        <property name="platName" type="java.lang.Integer">
+            <column name="plat_name">
+                <comment>&#229;&#144;&#136;&#228;&#189;&#156;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="platCode" type="java.lang.Integer">
+            <column name="plat_code">
+                <comment>&#232;&#181;&#183;&#230;&#143;&#144;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="point" type="java.lang.Integer">
+            <column name="point">
+                <comment>&#231;&#167;&#175;&#229;&#136;&#134;</comment>
+            </column>
+        </property>
+        <property name="pointVal" type="java.lang.Integer">
+            <column name="point_val">
+                <comment>&#233;&#135;&#145;&#233;&#146;&#177;</comment>
+            </column>
+        </property>
+        <property name="welTicketRatio" type="java.lang.Integer">
+            <column name="wel_ticket_ratio">
+                <comment>&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#230;&#138;&#160;&#230;&#175;&#148;</comment>
+            </column>
+        </property>
+        <property name="perShakeCost" type="java.lang.Integer">
+            <column name="per_shake_cost">
+                <comment>&#230;&#145;&#135;&#228;&#184;&#128;&#230;&#145;&#135;&#230;&#137;&#128;&#233;&#156;&#128;&#231;&#167;&#175;&#229;&#136;&#134;</comment>
+            </column>
+        </property>
+        <property name="shakeRate" type="java.lang.Integer">
+            <column name="shake_rate">
+                <comment>&#230;&#145;&#135;&#228;&#184;&#128;&#230;&#145;&#135;&#228;&#184;&#173;&#229;&#165;&#150;&#230;&#166;&#130;&#231;&#142;&#135;</comment>
+            </column>
+        </property>
+        <property name="regSendMoney" type="big_decimal">
+            <column name="reg_send_money" precision="20" scale="0">
+                <comment>
+                &#231;&#148;&#168;&#230;&#136;&#183;&#230;&#179;&#168;&#229;&#134;&#140;-&#229;&#143;&#145;&#230;&#148;&#190;&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="firstInvestWelRatio" type="java.lang.Integer">
+            <column name="first_invest_wel_ratio">
+                <comment>
+                &#231;&#148;&#168;&#230;&#136;&#183;&#233;&#166;&#150;&#230;&#138;&#149;-&#229;&#143;&#145;&#230;&#148;&#190;&#231;&#166;&#143;&#229;&#136;&#169;&#229;&#136;&#184;&#233;&#135;&#145;&#233;&#162;&#157;&#230;&#175;&#148;&#228;&#190;&#139;</comment>
+            </column>
+        </property>
+        <property name="firstRegReward" type="big_decimal">
+            <column name="first_reg_reward" precision="20" scale="0">
+                <comment>&#233;&#130;&#128;&#232;&#175;&#183;&#230;&#179;&#168;&#229;&#134;&#140;&#229;&#165;&#150;&#229;&#138;&#177;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="firstInvestRatio" type="java.lang.Integer">
+            <column name="first_invest_ratio">
+                <comment>&#233;&#130;&#128;&#232;&#175;&#183;&#233;&#166;&#150;&#230;&#138;&#149;&#229;&#165;&#150;&#229;&#138;&#177;&#230;&#175;&#148;&#228;&#190;&#139;</comment>
+            </column>
+        </property>
+        <property name="firstInvestReward" type="big_decimal">
+            <column name="first_invest_reward" precision="20" scale="0">
+                <comment>&#233;&#130;&#128;&#232;&#175;&#183;&#233;&#166;&#150;&#230;&#138;&#149;&#229;&#165;&#150;&#229;&#138;&#177;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="csysid" type="java.lang.Integer">
+            <column name="csysid">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#232;&#128;&#133;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

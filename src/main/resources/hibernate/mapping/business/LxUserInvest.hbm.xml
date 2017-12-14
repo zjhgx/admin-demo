@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 14, 2017 6:46:34 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.cs.lexiao.admin.mapping.business.LxUserInvest" table="lx_user_invest" catalog="lexiao">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="platId" type="java.lang.Integer">
+            <column name="plat_id">
+                <comment>&#229;&#133;&#179;&#232;&#129;&#148;&#229;&#185;&#179;&#229;&#143;&#176;</comment>
+            </column>
+        </property>
+        <property name="mid" type="java.lang.Integer">
+            <column name="mid">
+                <comment>&#229;&#149;&#134;&#230;&#136;&#183;id</comment>
+            </column>
+        </property>
+        <property name="bid" type="java.lang.Integer">
+            <column name="bid">
+                <comment>BDid</comment>
+            </column>
+        </property>
+        <property name="prjNo" type="string">
+            <column name="prj_no" length="50">
+                <comment>&#233;&#161;&#185;&#231;&#155;&#174;No</comment>
+            </column>
+        </property>
+        <property name="prjName" type="string">
+            <column name="prj_name" length="200">
+                <comment>&#233;&#161;&#185;&#231;&#155;&#174;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="50">
+                <comment>&#232;&#174;&#162;&#229;&#141;&#149;&#231;&#188;&#150;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="money" type="big_decimal">
+            <column name="money" precision="20" scale="0">
+                <comment>&#230;&#138;&#149;&#232;&#181;&#132;&#233;&#135;&#145;&#233;&#162;&#157;</comment>
+            </column>
+        </property>
+        <property name="timeLimit" type="java.lang.Integer">
+            <column name="time_limit">
+                <comment>&#230;&#156;&#159;&#233;&#153;&#144;</comment>
+            </column>
+        </property>
+        <property name="timeLimitUnit" type="string">
+            <column name="time_limit_unit" length="20">
+                <comment>&#230;&#156;&#159;&#233;&#153;&#144;&#229;&#141;&#149;&#228;&#189;&#141;</comment>
+            </column>
+        </property>
+        <property name="isFirst" type="java.lang.Byte">
+            <column name="is_first">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#233;&#166;&#150;&#230;&#138;&#149;</comment>
+            </column>
+        </property>
+        <property name="orderTime" type="java.lang.Integer">
+            <column name="order_time">
+                <comment>&#230;&#138;&#149;&#232;&#181;&#132;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="repayWay" type="string">
+            <column name="repay_way" length="30">
+                <comment>&#232;&#191;&#152;&#230;&#172;&#190;&#230;&#150;&#185;&#229;&#188;&#143;</comment>
+            </column>
+        </property>
+        <property name="ctime" type="java.lang.Integer">
+            <column name="ctime">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="mtime" type="java.lang.Integer">
+            <column name="mtime">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
